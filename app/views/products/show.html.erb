@@ -7,3 +7,35 @@
   <strong>Text:</strong>
   <%= @product.depscription %>
 </p>
+
+<p>
+  <h2>Comments:</h2>
+  <% @product.comments.each do |comment| %>
+    <p>
+      <strong>Commenter:</strong>
+      <%= comment.commenter %>
+    </p>
+
+    <p>
+      <strong>Comment:</strong>
+      <%= comment.body %>
+    </p>
+  <% end %>
+</p>
+
+<p>
+  <h2>Add Comment:</h2>
+  <%= form_with(model: [@product , @product.comments.build] , local: true) do |f|%>
+    <p>
+      <%= f.label :commenter %> <br />
+      <%= f.text_field :commenter %>
+    </p>
+  <p>
+    <%= f.label :body %> <br />
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+  <% end %>
+</p>
