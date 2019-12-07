@@ -1,0 +1,18 @@
+<h1>12321</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+  </tr>
+ 
+  <% @products.each do |article| %>
+    <tr>
+      <td><%= article.name %></td>
+      <td><%= article.depscription %></td>
+      <td><%= link_to 'Show', product_path(article) %></td>
+      <td><%= link_to 'Edit' , edit_product_path(article) %></td>
+      <td><%= link_to 'Destory', product_path(article), :method => :delete , :data => { :confirm => 'Are you Sure?'  } %></td>
+    </tr>
+  <% end %>
+</table>
