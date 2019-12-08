@@ -10,6 +10,16 @@
   </head>
 
   <body>
+  <% unless session[:crrent_user].nil? %>
+    <p>
+      Welcome <%= session[:crrent_user]['username'] %>
+    </p>
+  <% else %>
+    <p>
+      not Login
+    </p>
+  <% end %>
+
     <%= yield %>
   </body>
 </html>

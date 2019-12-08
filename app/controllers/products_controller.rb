@@ -1,3 +1,7 @@
+=begin
+    Product Control
+    @author SDTTTTT
+=end
 class ProductsController < ApplicationController
     
     def new

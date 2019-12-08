@@ -1,0 +1,22 @@
+<p>
+<h1>Register</h1>
+
+<p>
+  <% flash.each do |name , msg| %>
+    <%= content_tag :div , msg %>
+  <% end %>
+</p>
+
+<%= form_with scope: :register_form,url: 'register' , local: true do |f| %>
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+  <br />
+  <%= f.label :password %>
+  <%= f.text_field :password %>
+  <br />
+  <%= f.label 'again password' %>
+  <%= f.text_field :repassword %>
+  <br />
+  <%= f.submit %>
+<% end %>
+</p>
