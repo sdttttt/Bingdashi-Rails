@@ -12,11 +12,12 @@
   <body>
   <% unless session[:crrent_user].nil? %>
     <p>
-      Welcome <%= session[:crrent_user]['username'] %>
+      Welcome, <%= session[:crrent_user]['username'] %> 
+      <%= link_to "Logout", products_path %> 
     </p>
   <% else %>
     <p>
-      not Login
+      not Login, Click <%= link_to "Login" , login_path %>
     </p>
   <% end %>
 

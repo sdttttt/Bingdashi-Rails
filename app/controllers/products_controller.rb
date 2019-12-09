@@ -1,9 +1,11 @@
-=begin
-    Product Control
-    @author SDTTTTT
-=end
 class ProductsController < ApplicationController
-    
+
+    skip_before_action :before_require_login, only: [
+        :new,
+        :show,
+        :index,
+    ]
+
     def new
         @product = Product.new
     end
@@ -47,7 +49,8 @@ class ProductsController < ApplicationController
     end
     
     private
-       def product_params 
+
+    def product_params
         params.require(:product).permit(:name , :depscription)
-       end
+    end
 end

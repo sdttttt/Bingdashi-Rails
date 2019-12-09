@@ -1,5 +1,10 @@
 class AccessorController < ApplicationController
 
+  skip_before_action :before_require_login, only: [
+    :user_check,
+    :create_user,
+  ]
+
   # User login check Auth
   # @author SDTTTTT
   def user_check
@@ -50,6 +55,6 @@ class AccessorController < ApplicationController
   end
 
   def register_params
-    @params = params.require(:register_form).permit :username, :password, :repassword
+    params.require(:register_form).permit :username, :password, :repassword
   end
 end
