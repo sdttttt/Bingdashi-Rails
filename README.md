@@ -1,24 +1,19 @@
-# README
+# Rails Blog
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Description
 
-Things you may want to cover:
+This is My Blog, using Ruby on Rails builed.
 
-* Ruby version
+## Build
 
-* System dependencies
+- install Ruby
+- install bunder
+- install rails:6.0.0
 
-* Configuration
+> bundle install
 
-* Database creation
+> rails webpacker:install
 
-* Database initialization
+> rails s
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+access localhost:3000
