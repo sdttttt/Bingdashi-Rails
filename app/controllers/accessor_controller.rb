@@ -9,6 +9,7 @@ class AccessorController < ApplicationController
   # @author SDTTTTT
   def user_check
     @login_form = login_params
+
     @user = User.get @login_form
     if @user.nil?
       flash[:notice] = '你输入的内容很有问题'
@@ -51,7 +52,7 @@ class AccessorController < ApplicationController
   end
 
   def login_params
-    params.permit :username, :password
+    params.require(:user).permit :username, :password
   end
 
   def register_params

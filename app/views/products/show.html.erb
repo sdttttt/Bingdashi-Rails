@@ -26,6 +26,8 @@
 <p>
   <h2>Add Comment:</h2>
   <%= form_with(model: [@product , @product.comments.build] , local: true) do |f|%>
+
+  
     <p>
       <%= f.label :commenter %> <br />
       <%= f.text_field :commenter %>

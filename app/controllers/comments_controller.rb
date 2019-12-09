@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
 
-  skip_before_action before_require_login, only: [
+  skip_before_action :before_require_login, only: [
     :create,
   ]
 

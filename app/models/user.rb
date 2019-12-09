@@ -3,7 +3,7 @@ class User < ApplicationRecord
   validates :password , presence: true , length: { minimum: 7 , maximum: 24 }
 
   def self.check_not_exist? login_form
-    @user = User.where(login_form).take
+    @user = User.where(login_form).first
     @user.nil?
   end
 
