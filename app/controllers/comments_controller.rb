@@ -6,12 +6,19 @@ class CommentsController < ApplicationController
 
   def create
     @product = Product.find params[:product_id]
-    @comment = @product.comments.create(comment_params)
-    redirect_to product_path(@product)
+    @comment_info = put_commenter(comment_params)
+    @comment = @product.comments.create @comment_info
+    redirect_to product_path @product
   end
 
   private
     def comment_params
-      params.require(:comment).permit(:body , :commenter)
+      params.require(:comment).permit :body
     end
+
+    def put_commenter params
+      params[:commenter] = crrent_user.username
+      params if params.key? :commenter
+    end
+
 end

@@ -6,6 +6,12 @@ class ApplicationController < ActionController::Base
 
   before_action :before_require_login
 
+  protected
+  # Get Crrent User Infomation
+  def crrent_user
+    User.find session[:crrent_user]['uid']
+  end
+
   private
 
   def before_require_login

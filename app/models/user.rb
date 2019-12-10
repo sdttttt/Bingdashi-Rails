@@ -8,7 +8,7 @@ class User < ApplicationRecord
   end
 
   def self.get condition
-    self.where(condition).take
+    self.where(condition).first
   end
 
   # User Create
