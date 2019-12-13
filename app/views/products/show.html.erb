@@ -1,38 +1,65 @@
-<p>
-  <strong>Title:</strong>
-  <%= @product.name %>
-</p>
- 
-<p>
-  <strong>Text:</strong>
-  <%= @product.depscription %>
+
+
+<p class="text-justify">
+  <p class="lead">
+  
+  </p>
 </p>
 
+<div class="jumbotron">
+
+  <h1 class="display-4"><%= @product.name %></h1>
+  <p class="lead"><%= @product.depscription %></p>
+</div>
+
 <p>
-  <h2>Comments:</h2>
+
+
+<br />
+<hr />
+<br />
+
+<h4 class="display-8">Comments</h4>
+
+  <% if @product.comments.empty? %>
+
+    <p></p>
+    <h5> 评论区空空如也🙃 </h5>
+
+  <% else %>
+
+  <div class="list-group">
   <% @product.comments.each do |comment| %>
-    <p>
-      <strong>Commenter:</strong>
-      <%= comment.commenter %>
-    </p>
 
-    <p>
-      <strong>Comment:</strong>
-      <%= comment.body %>
-    </p>
+    <a  class="list-group-item list-group-item-action">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1"><%= comment.commenter %></h5>
+      <small class="text-muted">3 days ago</small>
+    </div>
+    <p class="mb-1"><%= comment.body %></p>
+    <small class="text-muted">✔</small>
+  </a>
   <% end %>
+  </div>
+
+  <% end %>
+
 </p>
 
+<br />
+<hr />
+<br />
 <p>
-  <h2>Add Comment:</h2>
+<div class='comment-form' >
+<h5 >Add Comment</h4> 
   <%= form_with(model: [@product , @product.comments.build] , local: true) do |f|%>
   
   <p>
-    <%= f.label :body %> <br />
-    <%= f.text_area :body %>
+    <%= f.text_area :body , class: 'form-control' %>
   </p>
   <p>
-    <%= f.submit %>
+    <%= f.submit 'Commit' , class: 'btn btn-primary' %>
   </p>
   <% end %>
 </p>
+</div>

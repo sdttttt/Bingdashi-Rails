@@ -1,16 +1,23 @@
-<p>
-  <h1>Login</h1>
 
-  <p>
+
+<%= stylesheet_pack_tag "users" %>
+
+<p>
+  
+
+
+
+  <div class="login-form shadow-sm p-3 mb-5 bg-white rounded" >
+  <h1>Login</h1>
+  <br />
+
+    <p>
     <% flash.each do |name , msg| %>
-      <%= content_tag :div , msg %>
+     <%= content_tag :div , msg + '🙃' , class: 'alert alert-warning' , role: 'alert'  %>
+    
     <% end %>
   </p>
-
   <%= form_with model: @user ,url: 'login' , local: true do |f| %>
-  <%= tag(:input, :type => "hidden", :name =>   
-request_forgery_protection_token.to_s, :value =>   
-form_authenticity_token) %> 
     <%= f.label :username %>
     <%= f.text_field :username , { class: 'form-control' } %>
     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
@@ -20,4 +27,5 @@ form_authenticity_token) %>
   <br />
     <%= f.submit 'Go' , { class: 'btn btn-primary' } %>
   <% end %>
+  </div>
 </p>

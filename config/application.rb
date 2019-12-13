@@ -12,8 +12,7 @@ module Blog
     config.load_defaults 6.0
     
     # Coding Studio Test Url
-    config.hosts << "lsdrgg-3000-haxeio.access.myide.io"
-
+   config.hosts << "lsdrgg-3000-kqgzfz.access.myide.io"
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading

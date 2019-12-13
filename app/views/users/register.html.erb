@@ -1,3 +1,15 @@
+
+<%= stylesheet_pack_tag "users" %>
+
+<div class="login-form shadow-none p-3 mb-5 bg-light rounded">
+
+<div class="alert alert-success" role="alert">
+  <h4 class="alert-heading">Thank you!</h4>
+  <p> It's still Beta, but thanks anyway </p>
+  <hr>
+  <p class="mb-0">By SDTTTTT</p>
+</div>
+
 <p>
 <h1>Register</h1>
 
@@ -9,14 +21,15 @@
 
 <%= form_with scope: :register_form,url: 'register' , local: true do |f| %>
   <%= f.label :username %>
-  <%= f.text_field :username %>
+  <%= f.text_field :username , class: 'form-control' %>
   <br />
-  <%= f.label :password %>
-  <%= f.text_field :password %>
+  <%= f.label :password  %>
+  <%= f.password_field :password , class: 'form-control' %>
   <br />
   <%= f.label 'again password' %>
-  <%= f.text_field :repassword %>
+  <%= f.password_field :repassword , class: 'form-control' %>
   <br />
-  <%= f.submit %>
+  <%= f.submit 'OK?' , class: 'btn btn-primary' %>
 <% end %>
 </p>
+</div>
