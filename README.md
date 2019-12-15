@@ -17,3 +17,10 @@ This is My Blog, using Ruby on Rails builed.
 > rails s
 
 access localhost:3000
+
+## production
+delete config/master.key and credentials.yml.enc
+
+> rails credential:edit
+
+> rails assets:precompile
