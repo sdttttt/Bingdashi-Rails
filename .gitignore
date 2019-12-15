@@ -5,7 +5,9 @@
 #   git config --global core.excludesfile '~/.gitignore_global'
 
 # Ignore IDE Config
-/.idea
+/.ideas
+
+/config/master.key
 
 # Ignore bundler config.
 /.bundle
