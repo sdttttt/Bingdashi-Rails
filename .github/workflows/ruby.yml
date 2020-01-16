@@ -15,7 +15,14 @@ jobs:
       - name: install sqlite
         run: |
           sudo apt-get -yqq install libsqlite3-dev libpq-dev
-      - name: Build and test with Rake
+      - name: Build Application
         run: |
           gem install bundler
           bundle install
+          bin/rails db:setup
+      - name: Run Test
+        env:
+          RAILS_ENV: test
+        run: |
+          bin/rake test
+          bin/rake test:system
