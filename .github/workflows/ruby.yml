@@ -19,7 +19,6 @@ jobs:
         run: |
           gem install bundler
           bundle install
-          bundle exec rails db:setup
       - name: Run Test
         env:
           RAILS_ENV: test
