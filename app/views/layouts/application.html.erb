@@ -4,7 +4,7 @@
     <title>Blog</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-   
+
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -12,7 +12,7 @@
   <body>
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Bootstrap</a>
+  <a class="navbar-brand" href="#">ヾ(•ω•`)o</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -20,13 +20,13 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="#"> Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <div class="nav-link">
 
          <% unless session[:crrent_user].nil? %>
-      Welcome, ✨<%= session[:crrent_user]['username'] %>
+      Welcome, ✨<%= session[:crrent_user]['username'] %> ✪ ω ✪
       <%= link_to "Logout", products_path %>
   <% else %>
       not Login,👋 Click <%= link_to "Login" , login_path %>   OR   ☞ <%= link_to "Register" , register_path %>?
