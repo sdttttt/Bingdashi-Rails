@@ -6,7 +6,7 @@
   </p>
 </p>
 
-<div class="card" style="width: 80%;margin: auto;">
+<div class="card opacity-1" style="width: 80%;margin: auto;">
   <div class="card-body">
     <h2 class="card-title"><%= @product.name %></h2>
     <p class="card-text"><%= @product.depscription %></p>
@@ -33,7 +33,7 @@
 
   <% @product.comments.each do |comment| %>
 
-   <div class="card border-primary mb-3" style="margin-left: 33px;max-width: 18rem;">
+   <div class="card border-primary mb-3 opacity-1" style="margin-left: 33px;max-width: 18rem;">
   <div class="card-header"><%= comment.commenter %></div>
   <div class="card-body text-primary">
     <p class="card-text"><%= comment.body %></p>
