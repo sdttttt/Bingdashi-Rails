@@ -1,5 +1,7 @@
 # Rails Blog
 
+[![Build status](https://ci.appveyor.com/api/projects/status/ifpoju6rbax4kh0f?svg=true)](https://ci.appveyor.com/project/sdttttt/bingdashi-rails)
+
 ## Description
 
 This is My Blog, using Ruby on Rails builed.
