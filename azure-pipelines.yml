@@ -7,7 +7,7 @@ trigger:
   branches:
     include:
       - master
-      - sdttttt
+      - sdttttt*
       - depend*
   paths:
     exclude:
