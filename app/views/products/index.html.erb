@@ -1,6 +1,6 @@
 
 
-<h1> Article List </h1>
+<h1 style="margin: 33px;"> <span class="badge badge-pill badge-dark">Article List</span></h1>
 
 <% if @products.empty? %>
 
@@ -12,21 +12,34 @@
   </div>
 <% else %>
 
-  <table class="table table-sm table-striped table-hover">
+  <table class=" table table-light table-borderless" style="width: 88%;margin: auto;">
     <tr>
       <th>Title</th>
       <th>Text</th>
     </tr>
-  
-  <%  %>
+
     <% @products.each do |product| %>
       <tr>
-        <td><%= product.name %></td>
-        <td><%= product.depscription %></td>
+        <td>
+        <% if product.name.length < 8  %>
+        <%= product.name %>
+        <% else %>
+        <%= product.name[0...8] %>...
+        <% end %>
+        </td>
+        <td>
+        <% if product.depscription.length < 8  %>
+        <%= product.depscription %>
+        <% else %>
+        <%= product.depscription[0...8] %>...
+        <% end %>
+        </td>
         <td><%= link_to 'Show', product_path(product) , { class: 'btn btn-outline-primary' } %></td>
         <td><%= link_to 'Edit',  edit_product_path(product) , { class: 'btn btn-outline-warning'} %></td>
         <td><%= link_to 'Destory', product_path(product), :method => :delete ,:class => 'btn btn-outline-danger' , :data => { :confirm => 'Are you Sure?'  } %></td>
       </tr>
+
+
     <% end %>
   </table>
 

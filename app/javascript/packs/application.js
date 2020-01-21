@@ -6,6 +6,7 @@
 //= require popper
 //= require bootstrap
 
+import 'styles/application'
 import 'styles/users'
 import 'styles/products'
 import 'bootstrap/dist/js/bootstrap'

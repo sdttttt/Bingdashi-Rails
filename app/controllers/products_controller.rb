@@ -9,9 +9,19 @@ class ProductsController < ApplicationController
     def new
         @product = Product.new
     end
-    
+
     def show
-        @product = Product.find(params[:id])
+        @product_id = params[:id]
+        if @product_id.to_i < 1
+            @product = Product.find 1
+        else
+            begin
+                @product = Product.find @product_id
+            rescue ActiveRecord::RecordNotFound => exception
+                puts exception.message
+                @product = Product.find 1
+            end
+        end
     end
 
     def index
@@ -19,7 +29,7 @@ class ProductsController < ApplicationController
     end
 
     def create
-        @product = Product.new product_params   
+        @product = Product.new product_params
         if @product.save
             redirect_to @product
         else
@@ -32,7 +42,7 @@ class ProductsController < ApplicationController
         @product.destroy
         redirect_to products_path
     end
-    
+
     def edit
         @product = Product.find(params[:id])
         render "update"
@@ -47,7 +57,7 @@ class ProductsController < ApplicationController
             render 'edit'
         end
     end
-    
+
     private
 
     def product_params

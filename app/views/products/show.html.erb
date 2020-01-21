@@ -2,24 +2,27 @@
 
 <p class="text-justify">
   <p class="lead">
-  
+
   </p>
 </p>
 
-<div class="jumbotron">
-
-  <h1 class="display-4"><%= @product.name %></h1>
-  <p class="lead"><%= @product.depscription %></p>
+<div class="card opacity-1" style="width: 80%;margin: auto;">
+  <div class="card-body">
+    <h2 class="card-title"><%= @product.name %></h2>
+    <p class="card-text"><%= @product.depscription %></p>
+  </div>
 </div>
 
 <p>
 
 
 <br />
-<hr />
+<hr style="width: 88%;" />
 <br />
 
-<h4 class="display-8">Comments</h4>
+<h1 class="display-8" style="margin:0 0 33px 33px;">
+<span class="badge badge-secondary">Comments</span>
+</h1>
 
   <% if @product.comments.empty? %>
 
@@ -28,19 +31,17 @@
 
   <% else %>
 
-  <div class="list-group">
   <% @product.comments.each do |comment| %>
 
-    <a  class="list-group-item list-group-item-action">
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1"><%= comment.commenter %></h5>
-      <small class="text-muted">3 days ago</small>
-    </div>
-    <p class="mb-1"><%= comment.body %></p>
-    <small class="text-muted">✔</small>
-  </a>
-  <% end %>
+   <div class="card border-primary mb-3 opacity-1" style="margin-left: 33px;max-width: 18rem;">
+  <div class="card-header"><%= comment.commenter %></div>
+  <div class="card-body text-primary">
+    <p class="card-text"><%= comment.body %></p>
   </div>
+  </div>
+    <p class="mb-1"></p>
+
+  <% end %>
 
   <% end %>
 
@@ -51,14 +52,16 @@
 <br />
 <p>
 <div class='comment-form' >
-<h5 >Add Comment</h4> 
+<h1 class="display-8" style="margin:0 0 33px 33px;">
+<span class="badge badge-info">Publish Comment</span>
+</h1>
   <%= form_with(model: [@product , @product.comments.build] , local: true) do |f|%>
-  
+
   <p>
-    <%= f.text_area :body , class: 'form-control' %>
+    <%= f.text_area :body , class: 'form-control', style: 'margin:0 0 33px 33px;width: 100%;height: 188px;' %>
   </p>
   <p>
-    <%= f.submit 'Commit' , class: 'btn btn-primary' %>
+    <%= f.submit 'Commit' , class: 'btn btn-primary', style: 'margin:0 0 33px 33px;width: 50%;' %>
   </p>
   <% end %>
 </p>
