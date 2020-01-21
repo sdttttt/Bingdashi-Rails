@@ -12,4 +12,5 @@ before_test:
   - bundle -v
 
 test_script:
+  - rails db:migrate RAILS_ENV=test
   - bundle exec rake
