@@ -7,11 +7,12 @@ trigger:
   branches:
     include:
       - master
-      - sdttttt*
+      - sdtttttt
       - depend*
   paths:
     exclude:
       - README.md
+      - appveyor.yml
 
 pool:
   vmImage: 'ubuntu-latest'
