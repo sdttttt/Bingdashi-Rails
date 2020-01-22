@@ -12,15 +12,11 @@ class ProductsController < ApplicationController
 
     def show
         @product_id = params[:id]
-        if @product_id.to_i < 1
-            @product = Product.find 1
+
+        if Product.exists? @product_id
+            @product = Product.find @product_id
         else
-            begin
-                @product = Product.find @product_id
-            rescue ActiveRecord::RecordNotFound => exception
-                puts exception.message
-                @product = Product.find 1
-            end
+            @product = Product.find 1
         end
     end
 

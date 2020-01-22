@@ -2,15 +2,6 @@ class User < ApplicationRecord
   validates :username , presence: true , length: { minimum: 4 , maximum: 20 }
   validates :password , presence: true , length: { minimum: 7 , maximum: 24 }
 
-  def self.check_not_exist? login_form
-    @user = User.where(login_form).first
-    @user.nil?
-  end
-
-  def self.get condition
-    self.where(condition).first
-  end
-
   # User Create
   # if user have exist
   # @return -1
@@ -28,7 +19,7 @@ class User < ApplicationRecord
       return -2
     end
 
-    if self.check_not_exist? @new_user_info
+    if !self.exists? @new_user_info
       @user = self.new @new_user_info
       @user.save
       @user

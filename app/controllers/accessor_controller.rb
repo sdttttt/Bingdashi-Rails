@@ -10,7 +10,7 @@ class AccessorController < ApplicationController
   def user_check
     @login_form = login_params
 
-    @user = User.get @login_form
+    @user = User.find_by @login_form
     if @user.nil?
       flash[:notice] = '你输入的内容很有问题'
       redirect_to '/login'
@@ -39,10 +39,19 @@ class AccessorController < ApplicationController
         flash[:notice] = 'you Password Error'
       end
     end
+  end
 
+  def logout
+    destroy_crrent_user
+    flash[:notice] = 'You have logged out.'
+    redirect_to login_path
   end
 
   private
+
+  def destroy_crrent_user
+    session.delete :crrent_user
+  end
 
   def store_crrent_user user
     session[:crrent_user] = {
