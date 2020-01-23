@@ -6,6 +6,7 @@
 trigger:
 - master
 - sdtttttt
+- CICD
 
 pool:
   vmImage: 'ubuntu-18.04'
