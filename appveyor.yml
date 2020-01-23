@@ -1,5 +1,10 @@
 version: 1.0.{build}-{branch}
-    
+
+skip_commits:
+  files:
+    - 'azure-pipelines.yml'
+    - 'README.md'
+
 install:
   - set PATH=C:\Ruby26-x64\bin;%PATH%
   - bundle install
