@@ -8,7 +8,6 @@ trigger:
     include:
       - master
       - sdtttttt
-      - CICD
       - depend*
   paths:
     exclude:
@@ -16,7 +15,7 @@ trigger:
       - appveyor.yml
 
 pool:
-  vmImage: 'ubuntu-18.04'
+  vmImage: 'ubuntu-latest'
 
 steps:
 - task: UseRubyVersion@0

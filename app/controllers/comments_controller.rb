@@ -5,8 +5,8 @@ class CommentsController < ApplicationController
   ]
 
   def create
-    @comment_info = put_commenter(comment_params)
     @product = Product.find params[:product_id]
+    @comment_info = put_commenter(comment_params)
     @comment = @product.comments.create @comment_info
     redirect_to product_path @product
   end
@@ -14,7 +14,6 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.permit :product_id
     params.require(:comment).permit :body
   end
 

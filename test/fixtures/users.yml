@@ -1,11 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  username: WWWW
-  password: RRRR
-  email: 12321@fuck.com
+  username: MyString
+  password: MyString
+  email: 
 
 two:
-  username: TTTT
-  password: ZZZZ
-  email: 321123@fuck.com
+  username: MyString
+  password: MyString
+  email: 
