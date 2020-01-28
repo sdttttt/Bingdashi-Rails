@@ -23,8 +23,15 @@ steps:
   inputs:
     versionSpec: '>= 2.6.3'
 
+
 - script: sudo apt-get -yqq install libsqlite3-dev libpq-dev
-  displayName: install sqlite3
+  displayName: install sqlite3 dev
+
+- script: sudo ./sqlite3_31_install.sh
+  displayName: install SQLite3.31
+
+- script: sqlite3 -version
+  displayName: show SQLite3 Version
 
 - script: |
     gem install bundler
