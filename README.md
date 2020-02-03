@@ -4,13 +4,15 @@
 
 ## Description
 
-This is My Blog, using Ruby on Rails builed.
+This is My Blog, using Ruby on Rails 6 builed.✌ 
+
+UI i used Bootstrap. It's very mature.💎
 
 ## Build
 
-- install Ruby
-- install bunder
-- install rails:6.0.0
+- install Ruby ⭕
+- install bunder ⭕
+- install rails:6.0.0 ⭕
 
 > bundle install
 
