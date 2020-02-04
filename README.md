@@ -2,8 +2,7 @@
 
 [![Build status](https://ci.appveyor.com/api/projects/status/ifpoju6rbax4kh0f?svg=true)](https://ci.appveyor.com/project/sdttttt/bingdashi-rails)
 
-![Status](https://dev.azure.com/shiinazch/one/_apis/build/status/sdttttt.Bingdashi-Rails)
-
+[![Build status](https://dev.azure.com/shiinazch/one/_apis/build/status/sdttttt.Bingdashi-Rails)](https://ci.appveyor.com/project/sdttttt/bingdashi-rails)
 
 
 ## Description
