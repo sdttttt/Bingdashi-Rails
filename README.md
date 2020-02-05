@@ -1,9 +1,8 @@
 # Rails Blog
 
 [![Build status](https://ci.appveyor.com/api/projects/status/ifpoju6rbax4kh0f?svg=true)](https://ci.appveyor.com/project/sdttttt/bingdashi-rails)
-
+[![CodeFactor](https://www.codefactor.io/repository/github/sdttttt/bingdashi-rails/badge)](https://www.codefactor.io/repository/github/sdttttt/bingdashi-rails)
 [![Build status](https://dev.azure.com/shiinazch/one/_apis/build/status/sdttttt.Bingdashi-Rails)](https://ci.appveyor.com/project/sdttttt/bingdashi-rails)
-
 
 ## Description
 
