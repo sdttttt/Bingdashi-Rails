@@ -17,7 +17,7 @@ gem 'rubocop', '~> 0.80.0', require: false
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.7'
+gem 'jbuilder', '~> 2.10'
 gem 'pg', '~> 1.2.2'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
