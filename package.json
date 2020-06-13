@@ -13,7 +13,7 @@
   },
   "scripts": {
     "commit": "git add . && npx git-cz",
-    "sync": "git push -v",
+    "sync": "git push -v && git push -v github master",
     "commitAndSync": "npm run commit && npm run sync"
   },
   "version": "0.1.0",
