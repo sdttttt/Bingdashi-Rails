@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   skip_before_action :verify_authenticity_token
 
   before_action :before_require_login
-
+  
   protected
   # Get Crrent User Infomation
   def crrent_user

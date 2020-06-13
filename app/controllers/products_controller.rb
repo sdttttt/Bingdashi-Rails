@@ -11,6 +11,7 @@ class ProductsController < ApplicationController
     end
 
     def show
+
         @product_id = params[:id]
 
         if Product.exists? @product_id

@@ -1,8 +1,5 @@
 # frozen_string_literal: true
 class CommentsController < ApplicationController
-  skip_before_action :before_require_login, only: [
-    :create
-  ]
 
   def create
     @comment_info = put_commenter(comment_params)
