@@ -5,18 +5,19 @@
 #   gem 'sqlite3'
 #
 default: &default
-  adapter: sqlite3
+  adapter: postgresql
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
-
+  username: postgres
+  password: postgres
+  port: 5432
+  
 development:
   adapter: postgresql
   encoding: unicode
   database: jojo
   pool: 5
   timeout: 5000
-  username: postgres
-  password: Zch7758258
   host: 121.40.48.194
   port: 33006
 
@@ -25,7 +26,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: db/test.sqlite3
+  database: jojo
 
 production:
   adapter: postgresql
@@ -34,6 +35,6 @@ production:
   pool: 5
   timeout: 5000
   username: postgres
-  password: Zch7758258
+  password: postgres
   host: 121.40.48.194
   port: 33006
