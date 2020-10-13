@@ -33,10 +33,7 @@ jobs:
           node-version: 10.13.0
       
       - name: install sqlite
-        run: sudo apt-get -yqq install libsqlite3-dev libpq-dev
-      
-      - name: Install postgres client
-        run: sudo apt-get install libpq-dev
+        run: sudo apt-get -yqq install libsqlite3-dev libpq-dev build-essential libcurl4-openssl-dev
       
       - uses: actions/cache@v1
         with:
