@@ -17,8 +17,9 @@ jobs:
         ports:
         - 5432:5432
         env:
-          POSTGRES_USER: ${{ env.POSTGRES_USER }}
-          POSTGRES_PASSWORD: ${{ env.POSTGRES_PASSWORD }}
+          POSTGRES_USER: ${{ env.POSTGRES_USER}}
+          POSTGRES_PASSWORD: ${{ env.POSTGRES_PASSWORD}}
+          POSTGRES_DB: ${{ env.POSTGRES_DB}}
     steps:
       - uses: actions/checkout@v1
       - name: Set up Ruby 2.6
