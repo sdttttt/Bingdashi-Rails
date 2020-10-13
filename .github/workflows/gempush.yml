@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     services:
       postgres:
-        image: postgres:latest
+        image: postgres:11
         ports:
         - 5432:5432
         env:
@@ -25,6 +25,11 @@ jobs:
         uses: actions/setup-ruby@v1
         with:
           ruby-version: 2.7.x
+      
+      - name: Set up Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10.13.0
       
       - name: install sqlite
         run: sudo apt-get -yqq install libsqlite3-dev libpq-dev
@@ -45,9 +50,11 @@ jobs:
           bundle install
       
       - name: Create database
+        env:
+          RAILS_ENV: test
         run: |
-          bundler exec rails db:create RAILS_ENV=test
-          bundler exec rails db:migrate RAILS_ENV=test
+          bundler exec rails db:create
+          bundler exec rails db:migrate
       
       - name: Run tests
         run: bundler exec rake
